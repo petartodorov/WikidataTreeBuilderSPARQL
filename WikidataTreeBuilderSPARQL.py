@@ -28,6 +28,7 @@ class WikidataTreeBuilder(object):
         self._keepTraceVisitedNodes = keepTraceVisitedNodes   or False
         self._labelsLanguages = labelsLanguages               or "en,fr"
         self._queryProperties = queryProperties               or ["P31", "P279"]
+        self.__counter = 0
 
     def fromRoot(self, root, forbidden):
         """Build a tree from root (specify root with a tuple, ("Q####","name") """
@@ -48,6 +49,10 @@ class WikidataTreeBuilder(object):
 
     def makeTree(self, node, visited, forbidden):
         """Recursive function to explore the tree"""
+        self.__counter+=1
+        if self._debug:
+            if self.__counter%500==0:
+                print(self.__counter)
 
         flare = dict()
         flare["name"] = node
@@ -79,10 +84,9 @@ class WikidataTreeBuilder(object):
 
         return flare
 
-
 def main():
     """Example run"""
-    tree = WikidataTreeBuilder()
+    tree = WikidataTreeBuilder(keepTraceVisitedNodes=True)
     print(datetime.now())
     flare = tree.fromRoot(root=("Q21198", "Computer Science"), forbidden=["Q7889", "Q28923"])
     print(datetime.now())
