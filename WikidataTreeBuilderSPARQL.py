@@ -228,7 +228,7 @@ class WikidataTreeQuery(object):
 
     def makeHR(self, x):
         """Gets a tuple of data and converts labels like Q[0-9]+ to human-readable labels"""
-        return tuple([self.labels[i] if self.QIDpattern.match(i) else i for i in x])
+        return tuple([self.labels.get(i, i) if self.QIDpattern.match(i) else i for i in x])
 
     def getPrettyDF(self):
         """Function to take brute dataframe resulting from Wikidata query and
