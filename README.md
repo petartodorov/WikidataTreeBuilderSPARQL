@@ -1,9 +1,16 @@
-# wikidata
+# The WikidataTreeBuilderSPARQL module
+
 The WikidataTreeBuilderSPARQL.py contains a class to :
 * Query wikidata for all descendants of a node;
 * Structure the result as an arboresence;
 * Create a 'flare' dictionary object, suitable for writing as a json file and visualisation with d3js
 * Create a table with all descendants of a node, their properties as extracted from Wikidata, and all the paths to go from the root to the given node
+
+### Installation
+
+Go to an installation folder and simply run :
+
+`git clone https://github.com/petartodorov/wikidata`. You are ready to run the jupyter notebooks provided with the projet!
 
 ### Example run notebooks. 
 
@@ -14,26 +21,26 @@ The WikidataSampleRun-Software.ipynb gives an example of how to use the class to
 During initialization, the following parameters are set up with the following default settings :
 
 #### The endpoint to send the query:
-queryEndpoint = "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
+`queryEndpoint = "https://query.wikidata.org/bigdata/namespace/wdq/sparql"`
 
 #### Whether we are in verbose mode:
-debug = false
+`debug = false`
 
 #### The labels we want to get from the base. Those three should be of general interest for any root node:
-queryLabels = ["rdfs:label", "skos:altLabel", "schema:description"]
+`queryLabels = ["rdfs:label", "skos:altLabel", "schema:description"]`
 
 #### In which languages we want to get those labels :
-labelsLanguages = ["en", "fr"]
+`labelsLanguages = ["en", "fr"]`
 
 #### A list of the properties of interest, their values will be printed in the output for each entry:
 (References for names: https://www.wikidata.org/wiki/Wikidata:List_of_properties/all_in_one_table)
-lookupClaims = ["P571", "P275", "P101", "P135", "P348", "P306", "P1482", "P277", "P577", "P366", "P178", "P31", "P279", "P2572", "P3966", "P144", "P170", "P1324"]
+`lookupClaims = ["P571", "P275", "P101", "P135", "P348", "P306", "P1482", "P277", "P577", "P366", "P178", "P31", "P279", "P2572", "P3966", "P144", "P170", "P1324"]`
 
 #### Which properties define set membership. Default are elementOf and subClassOf:
-propertiesSetMembership = ["P31", "P279"]
+`propertiesSetMembership = ["P31", "P279"]`
 
 #### What is the default language for the metadata of the output file:
-defaultLanguage = "en"
+`defaultLanguage = "en"`
 
 ### Call.
 
