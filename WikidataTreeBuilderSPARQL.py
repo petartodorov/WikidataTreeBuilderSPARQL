@@ -263,7 +263,8 @@ class WikidataTreeQuery(object):
             self.getLabels(c2list_expnd_Q)
             if column == "entity":
                 continue
-            df[column] = df[column].apply(lambda x: self.makeHR(x))
+            tupleORstring = lambda x: x[0] if len(x) == 1 else x
+            df[column] = df[column].apply(lambda x: tupleORstring(self.makeHR(x)))
 
         # add the visited nodes column to the data frame.
         df["visitedNodes"] = df["entity"].apply(lambda x:self.visitedNodes[x])
