@@ -323,7 +323,7 @@ def main():
     """Example run"""
     tree = WikidataTreeQuery()
     print(datetime.now())
-    flare = tree.fromRoot(root=("Q21198", "Computer Science"), forbidden=[])
+    flare = tree.fromRoot("Q21198")
     print(datetime.now())
     with open("output.json", "w") as f:
         json.dump(flare, f, indent=4)
