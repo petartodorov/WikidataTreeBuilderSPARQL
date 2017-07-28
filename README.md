@@ -10,7 +10,7 @@ The WikidataTreeBuilderSPARQL.py contains a class to :
 
 Go to an installation folder and simply run :
 
-`git clone https://github.com/petartodorov/wikidata`. You are ready to run the jupyter notebooks provided with the projet!
+`git clone https://github.com/petartodorov/WikidataTreeBuilderSPARQL`. You are ready to run the jupyter notebooks provided with the projet!
 
 ### Example run notebooks. 
 
