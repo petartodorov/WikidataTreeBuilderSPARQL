@@ -12,7 +12,9 @@ Go to an installation folder and simply run :
 
 `git clone https://github.com/petartodorov/WikidataTreeBuilderSPARQL`. You are ready to run the jupyter notebooks provided with the projet!
 
-### Example run notebooks. 
+### Example run notebooks.
+
+For more context, check out my Medium blogpost: https://medium.com/@Montag86/exploring-wikidata-for-nlp-24c4a7babf0f
 
 The WikidataSampleRun-Software.ipynb gives an example of how to use the class to get the arborescence of a given node (software, which Wikidata ID is Q7397) and a table will all properties we define as relevant (this list of properties is the lookupClaims parameter of the class __init__). The default list of parameters is suitable to extract information from the 'software' node and its arborescence. If you need to explore the arborescence of another node, you have simply to replace the root="Q7397" in the call of the fromRoot function with the desired root. If you want to get a table with relevant properties, you should research the Wikidata documentation to find out which properties are relevant to your problem, to build their list, and to pass it as input parameter on the class init. 
 
