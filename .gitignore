@@ -1,2 +1,7 @@
 *.pyc
 *.pypnb_*
+*.json
+*.xlsx
+log.dat
+gribouillis.ipynb
+.*ipynb_*
